@@ -1,21 +1,17 @@
 """
 ╔══════════════════════════════════════════════════════════════════╗
-║              DCF VALUATION TOOL  —  v3.0                        ║
+║              DCF VALUATION TOOL  —  v3.0                         ║
 ║                                                                  ║
 ║  ENTRY POINT:                                                    ║
 ║    python dcf_valuation.py                                       ║
 ║                                                                  ║
 ║  MODELS:                                                         ║
 ║    1. Traditional DCF        — discounted FCF + Gordon TV        ║
-║    2. Gordon (Dividend DDM)  — P = D1 / (Ke − g)                ║
-║    3. Gordon (FCF-based TV)  — TV = FCF*(1+g) / (WACC−g)        ║
+║    2. Gordon (Dividend DDM)  — P = D1 / (Ke − g)                 ║
+║    3. Gordon (FCF-based TV)  — TV = FCF*(1+g) / (WACC−g)         ║
 ║    4. Sector Multiple        — EV = Multiple × Metric            ║
 ║    5. Sensitivity Matrix     — 9×8 grid anchored to base WACC/g  ║
-║                                                                  ║
-║  EXCEL:                                                          ║
-║    All computed cells use live =FORMULA references to            ║
-║    Inputs Log so changing one number cascades everywhere.        ║
-║                                                                  ║
+║                                                                  ║                                                                  ║
 ║  REQUIREMENTS:                                                   ║
 ║    pip install openpyxl pandas numpy                             ║
 ╚══════════════════════════════════════════════════════════════════╝
@@ -435,26 +431,8 @@ def print_results(inp, dcf, gp_div, gp_fcf, mt, sens_df):
 # BLOCK 8 — EXCEL WORKBOOK BUILDER
 #
 # WHAT IT DOES: constructs a four-sheet Excel workbook and returns
-# raw bytes. The key design constraint for v3.0 is maximum formula
-# referencing — every numeric cell that can be derived from another
-# cell uses a live =FORMULA instead of a hardcoded string.
-#
-# FORMULA STRATEGY:
-#   • Inputs Log (Sheet 4) holds all raw numeric inputs as true
-#     numbers (not formatted strings). It is the single source of
-#     truth — like a named-range parameter table.
-#   • Summary, FCF Projections, and Sensitivity cells reference
-#     Inputs Log via ='Inputs Log'!$B$n. Changing any input there
-#     cascades to all three analytical sheets automatically.
-#   • FCF Projections computes Discount Factor, PV, cumulative PV,
-#     and FCF/Share entirely with =FORMULAS, so the sheet is a live
-#     model — the user can override FCF values in Excel and all
-#     downstream cells update immediately.
-#   • Summary valuation rows compute price and upside via formulas
-#     referencing both the FCF sheet and Inputs Log.
-#
-# WHY RETURNING BYTES: keeps the function pure — the caller decides
-# the file path. Makes the function testable without disk I/O.
+# raw bytes.
+
 #
 # DEPENDENCIES: BLOCK 1 (style helpers), BLOCKS 3–6 (result dicts)
 # USED IN: BLOCK 9 (main)
@@ -488,7 +466,6 @@ def build_excel(inp, dcf, gp_div, gp_fcf, mt, sens_df,
     # formulas can do arithmetic on them directly. Text fields go in
     # col A/B only and are not referenced by formulas.
     #
-    # Row map — used to build cross-sheet references:
     IL_ROW = {}   # name → row number in Inputs Log
 
     left_params = [
