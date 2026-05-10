@@ -220,3 +220,14 @@ The goal was to build something rigorous enough to use as an actual analytical t
 This tool is for personal use. I use it to run quick valuations on stocks I’m researching and stress-test my own assumptions before forming a position view.
 
 > This is not investment advice and makes no claim to production-grade accuracy.
+
+
+---
+
+## AI Attribution
+
+This project was developed with the assistance of [Claude](https://www.anthropic.com/claude) (Anthropic). Claude was used to support code organization, improve code structure and readability, and enhance overall efficiency of the implementation.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
