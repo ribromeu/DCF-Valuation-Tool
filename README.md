@@ -5,7 +5,7 @@
 ![Excel Output](https://img.shields.io/badge/Output-Excel%20%2B%20Terminal-217346?logo=microsoft-excel&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey)
 
-A terminal-based equity valuation script that runs four models, prints a structured report, and exports a fully formula-referenced Excel workbook — no server, no browser, no GUI.
+A terminal-based equity valuation script that runs four models, prints a structured report, and exports a Excel workbook — no server, no browser, no GUI.
 
 Built as a personal finance project at the intersection of corporate finance theory, discounted cash flow modeling, and software engineering.
 
