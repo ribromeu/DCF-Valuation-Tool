@@ -61,7 +61,7 @@ Four sheets, dark-navy theme, maximum formula referencing.
 
 | Sheet | Content |
 |-------|---------|
-| **Summary** | Inputs table, valuation results (4 models), DCF breakdown — all values are live `=FORMULA` cells |
+| **Summary** | Inputs table, valuation results (4 models), DCF breakdown  |
 | **FCF Projections** | Year-by-year table: FCF, Discount Factor, PV, % of Total PV, Cumulative PV, FCF/Share — entirely formula-driven |
 | **Sensitivity** | Color-coded 13×13 heatmap with base-case highlight |
 | **Inputs Log** | Single source of truth — all raw numeric inputs stored here; every other sheet references this one |
