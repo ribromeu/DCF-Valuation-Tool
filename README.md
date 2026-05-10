@@ -213,10 +213,10 @@ Saved in the working directory. The timestamp in the filename allows multiple ru
 
 I built this during my BS Economics program (minors in Finance and Data Analysis) as a way to apply corporate finance theory, discounted cash flow modeling, and software engineering to a real valuation problem.
 
-DCF is one of the most foundational frameworks in equity research — every CFA candidate learns it, every sell-side analyst uses it — but the raw output creates false precision: a single implied price with no indication of how sensitive it is to the assumptions underneath it.
+DCF is one of the most foundational frameworks in equity research but the raw output creates false precision: a single implied price with no indication of how sensitive it is to the assumptions underneath it.
 
-The goal was to build something rigorous enough to use as an actual analytical tool, not just a class project. That meant going beyond a textbook DCF: adding two Gordon Growth variants to cross-check the terminal value assumption from different angles, building a 13×13 sensitivity matrix with fixed shock steps so the valuation band is immediately visible, and engineering the Excel output so every computed cell is a live formula — change one input and the entire workbook updates.
+The goal was to build something rigorous enough to use as an actual analytical tool, not just a class project. That meant going beyond a textbook DCF: adding two Gordon Growth variants to cross-check the terminal value assumption from different angles, building a 13×13 sensitivity matrix with fixed shock steps so the valuation band is immediately visible.
 
-This tool is for personal use. I use it to run quick valuations on stocks I’m researching, stress-test my own assumptions before forming a position view, and practice the kind of structured financial modeling I’ll be doing professionally in quantitative finance, asset research, or risk management.
+This tool is for personal use. I use it to run quick valuations on stocks I’m researching and stress-test my own assumptions before forming a position view.
 
 > This is not investment advice and makes no claim to production-grade accuracy.
